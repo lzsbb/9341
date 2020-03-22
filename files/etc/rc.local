@@ -1,0 +1,51 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+# chmod 777 
+
+
+chmod 777 /etc/mmsLowervolume.sh
+chmod 777 /etc/mmsip.sh
+chmod 777 /etc/hotplug.d/block/40-mount
+chmod 777 /etc/hotplug.d/block/10-mount
+chmod 777 /etc/init.d/runAutoAP
+chmod 777 /usr/bin/autoAP
+chmod 777 /usr/bin/mplayer
+chmod 777 /www/mms.html
+chmod 777 /www/cgi-bin/radio-mpd
+
+sh /etc/mmsLowervolume.sh
+sh /etc/mmsip.sh
+/etc/init.d/upmpdcli start
+
+
+
+#/etc/hotplug.d/block/40-mount restart
+
+#开机启动minidlna服务
+#/etc/init.d/minidlna restart
+
+#设置超时值(5分钟)使硬盘进入休眠模式（省电模式）(这个 S数值/12=分钟)；/dev/sda 为挂载的硬盘路径，ls /dev/sda*查看你的盘符。
+#hdparm -S 60 /dev/sda
+
+#!/bin/sh /etc/rc.common
+# Copyright (c) 2011-2012 OpenWrt.org
+START=99
+
+stop() {
+    killall usbmuxd
+}
+
+start() {
+    if [ ! -d "/var/lib/lockdown" ];then
+        mkdir -p /var/lib/lockdown
+    fi
+
+    ./usr/sbin/usbmuxd &
+}
+
+#计划任务中添加计划命令  每天8:30启动：30 7 * * * /etc/mms.sh 2>/dev/null
+
+usr/sbin/usbmuxd enable
+usr/sbin/usbmuxd start 
+
+# exit 0

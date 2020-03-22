@@ -1,0 +1,66 @@
+Index: linux-3.18.23/sound/soc/Kconfig
+===================================================================
+--- linux-3.18.23.orig/sound/soc/Kconfig
++++ linux-3.18.23/sound/soc/Kconfig
+@@ -33,6 +33,7 @@ config SND_SOC_GENERIC_DMAENGINE_PCM
+ # All the supported SoCs
+ source "sound/soc/adi/Kconfig"
+ source "sound/soc/atmel/Kconfig"
++source "sound/soc/ath79/Kconfig"
+ source "sound/soc/au1x/Kconfig"
+ source "sound/soc/bcm/Kconfig"
+ source "sound/soc/blackfin/Kconfig"
+Index: linux-3.18.23/sound/soc/Makefile
+===================================================================
+--- linux-3.18.23.orig/sound/soc/Makefile
++++ linux-3.18.23/sound/soc/Makefile
+@@ -10,6 +10,7 @@ obj-$(CONFIG_SND_SOC)	+= codecs/
+ obj-$(CONFIG_SND_SOC)	+= generic/
+ obj-$(CONFIG_SND_SOC)	+= adi/
+ obj-$(CONFIG_SND_SOC)	+= atmel/
++obj-$(CONFIG_SND_SOC)   += ath79/
+ obj-$(CONFIG_SND_SOC)	+= au1x/
+ obj-$(CONFIG_SND_SOC)	+= bcm/
+ obj-$(CONFIG_SND_SOC)	+= blackfin/
+Index: linux-3.18.23/sound/soc/codecs/Kconfig
+===================================================================
+--- linux-3.18.23.orig/sound/soc/codecs/Kconfig
++++ linux-3.18.23/sound/soc/codecs/Kconfig
+@@ -34,6 +34,7 @@ config SND_SOC_ALL_CODECS
+ 	select SND_SOC_ADAU1701 if I2C
+ 	select SND_SOC_ADS117X
+ 	select SND_SOC_AK4104 if SPI_MASTER
++        select SND_SOC_AK4430
+ 	select SND_SOC_AK4535 if I2C
+ 	select SND_SOC_AK4554
+ 	select SND_SOC_AK4641 if I2C
+@@ -299,6 +300,9 @@ config SND_SOC_AK4104
+ 	tristate "AKM AK4104 CODEC"
+ 	depends on SPI_MASTER
+ 
++config SND_SOC_AK4430
++        tristate "AKM AK4430 CODEC"
++
+ config SND_SOC_AK4535
+ 	tristate
+ 
+Index: linux-3.18.23/sound/soc/codecs/Makefile
+===================================================================
+--- linux-3.18.23.orig/sound/soc/codecs/Makefile
++++ linux-3.18.23/sound/soc/codecs/Makefile
+@@ -24,6 +24,7 @@ snd-soc-adav801-objs := adav801.o
+ snd-soc-adav803-objs := adav803.o
+ snd-soc-ads117x-objs := ads117x.o
+ snd-soc-ak4104-objs := ak4104.o
++snd-soc-ak4430-objs := ak4430.o
+ snd-soc-ak4535-objs := ak4535.o
+ snd-soc-ak4554-objs := ak4554.o
+ snd-soc-ak4641-objs := ak4641.o
+@@ -198,6 +199,7 @@ obj-$(CONFIG_SND_SOC_ADAV801)  += snd-so
+ obj-$(CONFIG_SND_SOC_ADAV803)  += snd-soc-adav803.o
+ obj-$(CONFIG_SND_SOC_ADS117X)	+= snd-soc-ads117x.o
+ obj-$(CONFIG_SND_SOC_AK4104)	+= snd-soc-ak4104.o
++obj-$(CONFIG_SND_SOC_AK4430)	+= snd-soc-ak4430.o
+ obj-$(CONFIG_SND_SOC_AK4535)	+= snd-soc-ak4535.o
+ obj-$(CONFIG_SND_SOC_AK4554)	+= snd-soc-ak4554.o
+ obj-$(CONFIG_SND_SOC_AK4641)	+= snd-soc-ak4641.o
