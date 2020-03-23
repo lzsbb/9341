@@ -1,5 +1,5 @@
 报gdate.c:2497:7: error
-在
+在：
 tools/pkg-config/patches/
 增加文件：
 001-glib-gdate-suppress-string-format-literal-warning.patch
@@ -22,3 +22,17 @@ tools/pkg-config/patches/
  }
 +
 +#pragma GCC diagnostic pop
+
+
+报automake.in 3938 error
+在：
+tools/automake/patches/
+增加文件：
+210-fix-bug-because-of-high-perl-version.patch
+代码：
+--- a/bin/automake.in
++++ b/bin/automake.in
+@@ -3938,1 +3938,2 @@ 
+-  $text =~ s/\${([^ \t=:+{}]+)}/substitute_ac_subst_variables_worker ($1)/ge;
++#  $text =~ s/\${([^ \t=:+{}]+)}/substitute_ac_subst_variables_worker ($1)/ge;
++  $text =~ s/\$[{]([^ \t=:+{}]+)}/substitute_ac_subst_variables_worker ($1)/ge;
