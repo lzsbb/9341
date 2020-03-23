@@ -746,3 +746,12 @@ index d5ad7b1..020ad16 100644
  
  /* Ignore/forbid kprobes attach on very low level functions marked by this attribute: */
  #ifdef CONFIG_KPROBES
+
+报make[5]: *** [tools/lib/rsa/rsa-sign.o] Error 1
+10902
+make[4]: *** [tools-only] Error 2
+10903
+Makefile:1195: recipe for target 'tools-only' failed
+在.yml文件加
+sudo -E apt install libssl1.0-dev -y
+
