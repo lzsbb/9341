@@ -186,7 +186,7 @@ jobs:
           make defconfig
       - name: Make download
         run: |
-          make download -j1 V=s
+          make download -j8 V=s
           find ./dl/ -size -1024c -exec rm -f {} \;
           df -h
       - name: Compile firmware
@@ -201,11 +201,11 @@ jobs:
           du -h --max-depth=1 ./build_dir
           du -h --max-depth=1 ./bin
       - name: Prepare artifact
-        run: find ./bin/ar71xx -type d -name "ar71xx" | xargs rm -rf {}
+        run: mkdir -p /bin/targets
+             find ./bin/targets -type d -name "targets" | xargs rm -rf {}
 
       - name: Upload artifact
         uses: actions/upload-artifact@master
         with:
           name: OpenWrt firmware
-          path: ./bin/ar71xx/
-      
+          path: ./bin/targets/
