@@ -200,10 +200,12 @@ jobs:
           du -h --max-depth=1 ./ --exclude=build_dir --exclude=bin
           du -h --max-depth=1 ./build_dir
           du -h --max-depth=1 ./bin
+      - name: 创建固件目录
+        run: 
+              mkdir -p /bin/targets
       - name: Prepare artifact
-        run: mkdir -p /bin/targets
+        run: 
              find ./bin/targets -type d -name "targets" | xargs rm -rf {}
-
       - name: Upload artifact
         uses: actions/upload-artifact@master
         with:
