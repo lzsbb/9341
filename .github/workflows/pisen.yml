@@ -43,6 +43,7 @@ jobs:
           df -h
       - name: Update feeds
         run: |
+          sudo -E chmod -R 777 ./
           ./scripts/feeds update -a
           ./scripts/feeds install -a
       - name: Generate configuration file
