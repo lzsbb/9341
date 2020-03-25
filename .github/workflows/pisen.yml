@@ -165,7 +165,7 @@ jobs:
           make defconfig
       - name: Make download
         run: |
-          make download -j8 
+          make download -j4 
           find ./dl/ -size -1024c -exec rm -f {} \;
           df -h
       - name: Compile firmware
