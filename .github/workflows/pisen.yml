@@ -82,7 +82,8 @@ jobs:
           cat >> .config <<EOF
           CONFIG_TARGET_ar71xx=y
           CONFIG_TARGET_ar71xx_generic=y
-          CONFIG_TARGET_ar71xx_generic_PISEN=y
+          #CONFIG_TARGET_ar71xx_generic_PISEN=y
+          CONFIG_TARGET_ar71xx_generic_TLMR3020=y
           EOF
           # 固件压缩:
           # cat >> .config <<EOF
