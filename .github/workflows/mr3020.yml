@@ -50,6 +50,7 @@ jobs:
         run: |
           rm -f ./.config*
           touch ./.config
+          make oldconfig
           #
           # ========================固件定制部分========================
           # 
