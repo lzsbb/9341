@@ -234,7 +234,7 @@ static struct board_info boards[] = {
 		.id		= "TL-MR3020v1",
 		.hw_id		= HWID_TL_MR3020_V1,
 		.hw_rev		= 1,
-		.layout_id	= "4Mlzma",
+		.layout_id	= "16Mlzma",
 	}, {
 		.id		= "TL-MR3220v1",
 		.hw_id		= HWID_TL_MR3220_V1,
