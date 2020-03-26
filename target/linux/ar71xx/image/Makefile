@@ -413,7 +413,7 @@ endef
 TARGET_DEVICES += tl-mr10u-v1 tl-mr11u-v1 tl-mr11u-v2 tl-mr12u-v1 tl-mr13u-v1
 
 define Device/tl-mr3020-v1
-    $(Device/tplink-4mlzma)
+    $(Device/tplink-16mlzma)
     BOARDNAME := TL-MR3020
     DEVICE_PROFILE := TLMR3020
     TPLINK_HWID := 0x30200001
