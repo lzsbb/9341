@@ -722,7 +722,7 @@ jobs:
           CONFIG_PACKAGE_usbutils=y
           EOF
           sed -i 's/^[ \t]*//g' ./.config
-          make defconfig
+          make oldconfig
       - name: Make download
         run: |
           make download -j1
