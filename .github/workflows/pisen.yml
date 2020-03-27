@@ -82,7 +82,7 @@ jobs:
           cat >> .config <<EOF
           CONFIG_TARGET_ar71xx=y
           CONFIG_TARGET_ar71xx_generic=y
-          CONFIG_TARGET_ar71xx_generic_TLMR3020=y
+          CONFIG_TARGET_ar71xx_generic_PISEN=y
           CONFIG_HAS_SUBTARGETS=y
           CONFIG_TARGET_BOARD="ar71xx"
           CONFIG_TARGET_ARCH_PACKAGES="ar71xx"
