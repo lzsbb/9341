@@ -13,7 +13,7 @@
 +++ b/drivers/tty/serial/8250/Kconfig
 @@ -91,6 +91,10 @@ config SERIAL_8250_CONSOLE
  
- 	  If unsure, say N.
+ 	  If unsure, say y.
  
 +config SERIAL_8250_SYSRQ
 +	bool "Magic sysrq support on 8250/16550 devices"
