@@ -84,11 +84,7 @@ jobs:
           CONFIG_TARGET_ar71xx_generic=y
           EOF
           sed -i 's/^[ \t]*//g' ./.config
-      - name: Make download
-        run: |
-          make download -j1
-          find ./dl/ -size -1024c -exec rm -f {} \;
-          df -h
+      
       - name: Compile firmware
         run: |
           make -j$(nproc) || make -j1 V=s
