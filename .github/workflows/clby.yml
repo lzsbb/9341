@@ -597,7 +597,7 @@ jobs:
           CONFIG_PACKAGE_libaudiofile=y
           CONFIG_PACKAGE_libavahi-client=y
           CONFIG_PACKAGE_libavahi-dbus-support=y
-          CONFIG_PACKAGE_kmod-ath79-i2s-dev=y
+          
           CONFIG_PACKAGE_libblobmsg-json=y
           CONFIG_PACKAGE_libcap=y
           CONFIG_PACKAGE_libcurl=y
