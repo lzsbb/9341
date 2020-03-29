@@ -65,12 +65,12 @@ define KernelPackage/ath79-carambola2
 	SUBMENU:=i2s alsa modules
 	TITLE:=Atheros 933X carambola 2 clue code
 	DEPENDS:=@AUDIO_SUPPORT +kmod-ath79-i2s +kmod-ath79-pcm +kmod-ath79-wm8727
-	FILES:=$(PKG_BUILD_DIR)/ath-carambola2.ko
+	FILES:=$(PKG_BUILD_DIR)/mach-carambola2.ko
 	KCONFIG:=
 endef
 
-define KernelPackage/ath79-ath-carambola2/description
-	Kernel module for atheros ar933x ath-carambola2 clue code
+define KernelPackage/ath79-mach-carambola2/description
+	Kernel module for atheros ar933x mach-carambola2 clue code
 endef
 
 
